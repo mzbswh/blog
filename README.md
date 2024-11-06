@@ -1,2 +1,2 @@
 # blog
-[my blog](https://mzbswh.github.io/blog/)
+[我的博客](https://mzbswh.github.io/blog/)
