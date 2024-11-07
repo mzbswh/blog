@@ -1,11 +1,11 @@
 ---
-title: My First Post
+title: 开篇
 subtitle:
 date: 2024-11-06T14:55:33+08:00
 slug: 583bc6c
 draft: false
 author:
-  name:
+  name: mzbswh
   link:
   email:
   avatar:
@@ -15,9 +15,9 @@ license:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 杂项
 categories:
-  - draft
+  - 杂项
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
@@ -41,3 +41,5 @@ repost:
 ---
 
 <!--more-->
+
+我的第一篇博客，此网站主要用来记录一些学习笔记，知识分享等
