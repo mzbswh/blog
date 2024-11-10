@@ -6,8 +6,8 @@
    ],
    "defaultContentLanguage": "zh-cn",
    "languageCode": "zh-CN",
-   "languageName": "English",
-   "hasCJKLanguage": false,
+   "languageName": "Chinese Simplified",
+   "hasCJKLanguage": true,
    "paginate": 12,
    "copyright": "",
    "enableRobotsTXT": true,
@@ -46,6 +46,19 @@
             }
          },
          {
+            "identifier": "collections",
+            "parent": "",
+            "pre": "",
+            "post": "",
+            "name": "合集",
+            "url": "/collections/",
+            "title": "",
+            "weight": 3,
+            "params": {
+               "icon": "fa-solid fa-tags"
+            }
+         },
+         {
             "identifier": "tags",
             "parent": "",
             "pre": "",
@@ -53,7 +66,7 @@
             "name": "标签",
             "url": "/tags/",
             "title": "",
-            "weight": 3,
+            "weight": 4,
             "params": {
                "icon": "fa-solid fa-tags"
             }
@@ -660,8 +673,8 @@
          "readingTime": true,
          "endFlag": "",
          "instantPage": false,
-         "collectionList": false,
-         "collectionNavigation": false,
+         "collectionList": true,
+         "collectionNavigation": true,
          "repost": {
             "enable": false,
             "url": ""

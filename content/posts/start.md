@@ -14,6 +14,8 @@ keywords:
 license:
 comment: false
 weight: 0
+collections:
+  - 杂项
 tags:
   - 杂项
 categories:
