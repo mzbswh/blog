@@ -294,7 +294,7 @@
       "app": {
          "title": "MBW Blog",
          "noFavicon": false,
-         "svgFavicon": "",
+         "svgFavicon": "favicon.svg",
          "iconColor": "#5bbad5",
          "tileColor": "#da532c",
          "themeColor": {
