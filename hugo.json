@@ -13,6 +13,7 @@
    "enableRobotsTXT": true,
    "enableGitInfo": true,
    "enableEmoji": true,
+   "summaryLength": 150,
    "menu": {
       "main": [
          {
@@ -600,9 +601,9 @@
          "objectFit": false
       },
       "githubCorner": {
-         "enable": false,
-         "permalink": "https://github.com/hugo-fixit/FixIt",
-         "title": "View source on GitHub",
+         "enable": true,
+         "permalink": "https://github.com/mzbswh",
+         "title": "前往GitHub",
          "position": "right"
       },
       "gravatar": {
@@ -685,7 +686,7 @@
             "auto": true,
             "position": "right",
             "ordered": false,
-            "startLevel": 2,
+            "startLevel": 1,
             "endLevel": 6
          },
          "expirationReminder": {
@@ -805,11 +806,11 @@
                "shortname": ""
             },
             "gitalk": {
-               "enable": false,
-               "owner": "",
-               "repo": "",
-               "clientId": "",
-               "clientSecret": ""
+               "enable": true,
+               "owner": "mzbswh",
+               "repo": "https://github.com/mzbswh/blog",
+               "clientId": "Ov23livGgkcMrB6MXX4F",
+               "clientSecret": "4420e926b6e9d28f7cc58eca756e4b55ae6ff953 "
             },
             "valine": {
                "enable": false,
