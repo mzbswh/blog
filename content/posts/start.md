@@ -12,7 +12,7 @@ author:
 description:
 keywords:
 license:
-comment: false
+comment: true
 weight: 0
 collections:
   - 杂项
