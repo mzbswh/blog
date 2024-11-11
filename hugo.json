@@ -777,7 +777,7 @@
             "Mix": false
          },
          "comment": {
-            "enable": false,
+            "enable": true,
             "artalk": {
                "enable": false,
                "server": "https://yourdomain",
@@ -810,7 +810,7 @@
                "owner": "mzbswh",
                "repo": "blog",
                "clientId": "Ov23livGgkcMrB6MXX4F",
-               "clientSecret": "4420e926b6e9d28f7cc58eca756e4b55ae6ff953 "
+               "clientSecret": "4420e926b6e9d28f7cc58eca756e4b55ae6ff953"
             },
             "valine": {
                "enable": false,
