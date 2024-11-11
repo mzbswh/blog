@@ -13,7 +13,7 @@
    "enableRobotsTXT": true,
    "enableGitInfo": true,
    "enableEmoji": true,
-   "summaryLength": 150,
+   "summaryLength": 70,
    "menu": {
       "main": [
          {
@@ -352,7 +352,7 @@
          "capitalize": true
       },
       "navigation": {
-         "inSection": false,
+         "inSection": true,
          "reverse": false
       },
       "footer": {
@@ -538,7 +538,9 @@
          ]
       },
       "admonition": {},
-      "taskList": {},
+      "taskList": {
+         "tip": "fa-regular fa-lightbulb"
+      },
       "pangu": {
          "enable": true,
          "selector": "article"
@@ -616,12 +618,12 @@
          "scrollpercent": false
       },
       "readingProgress": {
-         "enable": false,
+         "enable": true,
          "start": "left",
          "position": "top",
          "reversed": false,
          "light": "",
-         "dark": "",
+         "dark": "#ffffd5",
          "height": "2px"
       },
       "pace": {

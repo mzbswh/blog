@@ -19,3 +19,41 @@
         }
     }
 }
+
+li[data-task='tip'] {
+    --fi-task-color: #a4f774;
+    --fi-checkbox-color: #EA9E36;
+}
+
+content {
+
+    h1,
+    h2 {
+        font-size: 1.5em;
+        padding-bottom: 0.3em;
+        border-bottom: 0px solid $global-border-color;
+    }
+}
+
+h3,
+h4 {
+    /* 可根据需要修改标题级别 */
+    border-left: 3.5px solid #42b983;
+    /* 竖线的颜色和宽度 */
+    padding-left: 10px;
+    /* 标题文字与竖线的间距 */
+    margin: 1em 0;
+    /* 上下边距 */
+}
+
+.single {
+    .content {
+
+        >h1,
+        >h2 {
+            font-size: 1.5em;
+            padding-bottom: 0.3em;
+            border-bottom: 0px solid $global-border-color;
+        }
+    }
+}
