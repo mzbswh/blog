@@ -596,7 +596,7 @@
          }
       },
       "cdn": {
-         "data": "jsdelivr.yml"
+         "data": ""
       },
       "compatibility": {
          "polyfill": false,
