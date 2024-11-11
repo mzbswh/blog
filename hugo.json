@@ -808,7 +808,7 @@
             "gitalk": {
                "enable": true,
                "owner": "mzbswh",
-               "repo": "https://github.com/mzbswh/blog",
+               "repo": "blog",
                "clientId": "Ov23livGgkcMrB6MXX4F",
                "clientSecret": "4420e926b6e9d28f7cc58eca756e4b55ae6ff953 "
             },
