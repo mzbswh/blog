@@ -1,0 +1,7 @@
+// Custom admonitions style
+$custom-admonition-map: (
+    m-tip: (color: hsl(130, 72%, 50%),
+        bg-color: rgba(15, 216, 18, 0.1),
+    ),
+);
+$admonition-color-map: map-merge($admonition-color-map, $custom-admonition-map);

@@ -537,7 +537,9 @@
             "dark"
          ]
       },
-      "admonition": {},
+      "admonition": {
+         "m-tip": "fa-regular fa-lightbulb"
+      },
       "taskList": {
          "tip": "fa-regular fa-lightbulb"
       },

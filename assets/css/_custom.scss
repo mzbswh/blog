@@ -48,7 +48,7 @@ h4 {
 
 .single {
     .content {
-        
+
         >h1,
         >h2 {
             font-size: 1.5em;
@@ -56,4 +56,9 @@ h4 {
             border-bottom: 0px solid $global-border-color;
         }
     }
+}
+
+li[data-task='tip'] {
+    --fi-task-color: #a4f774;
+    --fi-checkbox-color: #EA9E36;
 }
