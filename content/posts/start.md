@@ -42,6 +42,4 @@ repost:
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
 
-<!--more-->
-
 我的第一篇博客，此网站主要用来记录一些学习笔记，知识分享等...
