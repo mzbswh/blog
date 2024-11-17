@@ -99,7 +99,7 @@ public class LambdaTest
 {.awesome-hr}
 
 ### 案列2
-> [!example] 实例方法捕获了外部方法的局部变量
+> [!example] 捕获了局部变量
 
 ```csharp
 public class LambdaTest
@@ -142,7 +142,7 @@ public class LambdaTest
 {.awesome-hr}
 
 ### 案列3
-> [!example] 实例方法捕获了实例字段
+> [!example] 捕获了实例字段
 
 ```csharp
 public class LambdaTest
@@ -185,7 +185,7 @@ public class LambdaTest
 {.awesome-hr}
 
 ### 案列4
-> [!example] 静态方法中的捕获了当前类型静态字段
+> [!example] 捕获了静态字段
 
 ```csharp
 public class LambdaTest
