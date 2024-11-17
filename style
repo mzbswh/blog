@@ -23,3 +23,40 @@
 > Do not approach or handle without protective gear.
 
 _admonition.scss
+_alert.scss
+
+- [ ] Unchecked
+- [x] Checked
+- [/] In Progress
+- [-] Cancelled
+- [<] Scheduled
+- [>] Rescheduled
+- [!] Important
+- [?] Question
+
+==FixIt== is an awesome Hugo theme!
+
+特殊分割线
+---
+{.awesome-hr}
+
+块引用
+> The quick brown fox jumps over the lazy dog.
+{.blockquote-center}
+
+
+* Fruit
+  * Apple
+  * Orange
+  * Banana
+  {.text-success}
+* Dairy
+  * Milk
+  * Cheese
+  {.text-warning}
+{.text-primary}
+
+:emoji:
+
+markdown语法
+https://fixit.lruihao.cn/documentation/content-management/markdown-syntax/basics/
