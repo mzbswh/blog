@@ -267,3 +267,9 @@ public class LambdaTest
 }
 ```
 如上面代码所示，在创建类实例时保存此委托实例，其他用到的地方使用此实例。
+
+---
+{.awesome-hr}
+
+> 引用参考  
+> [Lambda 表达式详解](https://www.cnblogs.com/eventhorizon/p/14123511.html)
