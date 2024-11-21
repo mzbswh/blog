@@ -25,16 +25,6 @@ li[data-task='tip'] {
     --fi-checkbox-color: #EA9E36;
 }
 
-content {
-
-    h1,
-    h2 {
-        font-size: 1.5em;
-        padding-bottom: 0.3em;
-        border-bottom: 0px solid $global-border-color;
-    }
-}
-
 h3,
 h4 {
     /* 可根据需要修改标题级别 */
@@ -44,18 +34,6 @@ h4 {
     /* 标题文字与竖线的间距 */
     margin: 1em 0;
     /* 上下边距 */
-}
-
-.single {
-    .content {
-
-        >h1,
-        >h2 {
-            font-size: 1.5em;
-            padding-bottom: 0.35em;
-            border-bottom: 0px solid $global-border-color;
-        }
-    }
 }
 
 li[data-task='tip'] {
