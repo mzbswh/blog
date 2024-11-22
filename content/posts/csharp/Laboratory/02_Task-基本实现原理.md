@@ -1,5 +1,5 @@
 ---
-title: 异步的简单了解-基本实现原理
+title: Task-基本实现原理
 subtitle:
 date: 2024-11-17T19:34:08+08:00
 slug: 0b5f289
@@ -15,7 +15,7 @@ license:
 comment: false
 weight: 0
 tags:
-  - c#
+  - c#,异步,Async,Await
 categories:
   - c#
 collections:

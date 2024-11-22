@@ -1,5 +1,5 @@
 ---
-title: 深入了解Lambda表达式-避免GC的产生
+title: Lambda表达式-避免GC的产生
 subtitle:
 date: 2024-11-11T21:59:16+08:00
 slug: 4e4b9ed
@@ -15,7 +15,7 @@ license:
 comment: false
 weight: 0
 tags:
-  - c#
+  - c#,Lambda
 categories:
   - c#
 collections:
