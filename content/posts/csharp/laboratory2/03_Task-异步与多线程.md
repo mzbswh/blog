@@ -64,3 +64,5 @@ public class AsyncTest
 > 也就是说当第一个等待完成后, 当前的线程发生了改变, 线程改变背后的原理是什么呢?
 
 ## 线程同步上下文
+
+在[Task基本实现原理中]({{< ref "posts/csharp/laboratory2/02_Task-基本实现原理" >}})
