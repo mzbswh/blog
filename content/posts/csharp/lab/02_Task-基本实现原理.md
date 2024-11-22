@@ -274,7 +274,9 @@ internal static class AsyncMethodBuilderCore // debugger depends on this exact n
 #### 2. 等待异步任务完成
 
 状态机启动后, 遇到await的任务时, 如果判断任务未完成, 会调用`taskBuilder.AwaitUnsafeOnCompleted`或`taskBuilder.AwaitOnCompleted`方法。   
+
 这两个方法主要区别在与`AwaitUnsafeOnCompleted`不会捕获`ExecutionContext`, 这会减少一些不必要的开销, 大多数的异步场景不依赖`ExecutionContext`。  
+
 对于一些高频的异步调用场景, 捕获`ExecutionContext`会显著影响性能。如果需要捕获`ExecutionContext`, 可参考下面的写法:
 ```c#
 async Task Example()
@@ -324,16 +326,8 @@ internal sealed override void Run(Task task, bool canInlineContinuationTask)
     // Any exceptions will be handled by RunCallback.
 }
 ```
-这里实际就是使用调用`SynchronizationContext`的`Post()`方法并将状态机的`MoveNext`方法传入。
-`SynchronizationContext`主要实现:
-```c#
- public partial class SynchronizationContext
-{
-    public virtual void Send(SendOrPostCallback d, object? state) => d(state);
+这里最终就是调用`SynchronizationContext`的`Post()`方法并将状态机的`MoveNext`方法传入。
 
-    public virtual void Post(SendOrPostCallback d, object? state)
-        => ThreadPool.QueueUserWorkItem(static s => s.Key(s.Value), new KeyValuePair<SendOrPostCallback, object?>(d, state), preferLocal: false);
-}
-```
-同步上下文主要就是`Send`和`Post`这两个方法, 一个同步调用一个异步调用, 这里不做详细介绍, 在后续的文章讲解。  
-最后一步就是在线程池线程取一个线程并执行`stateMachine.MoveNext()`
+同步上下文主要就是`Send`和`Post`这两个方法, 一个同步调用一个异步调用, 这里不做详细介绍, 在后续的文章讲解。
+
+状态机的整个驱动流程大概就是这些步骤, 具体代码可以直接参考[官方源码](https://github.com/dotnet/runtime/tree/main/src/libraries)[^dotnetRuntime]
