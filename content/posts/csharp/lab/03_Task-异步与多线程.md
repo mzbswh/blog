@@ -65,4 +65,4 @@ public class AsyncTest
 
 ## 线程同步上下文
 
-在[Task基本实现原理中]({{< ref "posts/csharp/laboratory2/02_Task-基本实现原理" >}})
+在[Task基本实现原理中]({{< ref "02_Task-基本实现原理" >}})
