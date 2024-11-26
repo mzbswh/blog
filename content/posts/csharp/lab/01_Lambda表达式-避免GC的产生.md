@@ -15,7 +15,8 @@ license:
 comment: false
 weight: 0
 tags:
-  - c#,Lambda
+  - c#
+  - Lambda
 categories:
   - c#
 collections:

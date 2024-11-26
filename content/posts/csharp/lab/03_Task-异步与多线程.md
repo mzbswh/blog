@@ -3,7 +3,7 @@ title: Task-异步与多线程
 subtitle:
 date: 2024-11-22T12:34:08+08:00
 slug:
-draft: true
+draft: false
 author:
   name: mzbswh
   link:
@@ -15,7 +15,11 @@ license:
 comment: false
 weight: 0
 tags:
-  - c#,异步,Async,Await,同步上下文,SynchronizationContext
+  - c#
+  - 异步
+  - Async
+  - 同步上下文
+  - SynchronizationContext
 categories:
   - c#
 collections:
@@ -82,15 +86,88 @@ public class AsyncTest
 
 如果没有设置当前线程的同步上下文, 则会使用默认的上下文, 默认上下文的核心实现代码:
 ```c#
-  public partial class SynchronizationContext
-  {
-      public SynchronizationContext() { }
+public partial class SynchronizationContext
+{
+    public SynchronizationContext() { }
 
-      public static SynchronizationContext? Current => Thread.CurrentThread._synchronizationContext;
+    public static SynchronizationContext? Current => Thread.CurrentThread._synchronizationContext;
 
-      public virtual void Send(SendOrPostCallback d, object? state) => d(state);
+    public virtual void Send(SendOrPostCallback d, object? state) => d(state);
 
-      public virtual void Post(SendOrPostCallback d, object? state)
-          => ThreadPool.QueueUserWorkItem(static s => s.Key(s.Value), new KeyValuePair<SendOrPostCallback, object?>(d, state), preferLocal: false);
-  }
+    public virtual void Post(SendOrPostCallback d, object? state)
+        => ThreadPool.QueueUserWorkItem(static s => s.Key(s.Value), new KeyValuePair<SendOrPostCallback, object?>(d, state), preferLocal: false);
+}
 ```
+核心的两个方法就是`Send`和`Post`
+- `Send`: 在当前线程同步调用回调方法, 会阻塞当前线程直到方法执行完成。
+- `Post`: 异步调用, 不会阻塞当前线程, 如上面默认的实现是从线程池中取一个线程执行回调。
+
+### 3. 自定义同步上下文
+回到最开始的问题, 我们通过实现自定义的同步上下文来实现`await`结束后回到主线程执行后续的代码逻辑。
+```c#
+partial class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Main ThreadId=" + Thread.CurrentThread.ManagedThreadId);
+        SynchronizationContext.SetSynchronizationContext(new CustomSynchronizationContext());
+        AsyncTest t = new AsyncTest();
+
+        _ = t.FooAsync();
+
+        while (true)
+        {
+            while (CustomSynchronizationContext.Actions.Count > 0)
+            {
+                var action = CustomSynchronizationContext.Actions[0];
+                CustomSynchronizationContext.Actions.RemoveAt(0);
+                action();
+            }
+            Thread.Sleep(100);
+        }
+    }
+}
+
+public class AsyncTest
+{
+    public async Task FooAsync()
+    {
+        Console.WriteLine("async1 ThreadId=" + Thread.CurrentThread.ManagedThreadId);
+        await Task.Delay(1000);
+        Console.WriteLine("async2 ThreadId=" + Thread.CurrentThread.ManagedThreadId);
+        await Task.Delay(1000);
+        Console.WriteLine("async3 ThreadId=" + Thread.CurrentThread.ManagedThreadId);
+    }
+}
+
+public class CustomSynchronizationContext : SynchronizationContext
+{
+    public static List<Action> Actions = new List<Action>();
+
+    public override void Send(SendOrPostCallback d, object state)
+    {
+        Post(d, state);
+    }
+
+    public override void Post(SendOrPostCallback d, object state)
+    {
+        Console.WriteLine("Post callback");
+        lock (Actions)
+        {
+            Actions.Add(() => d(state));
+        }
+    }
+}
+```
+上述代码里, 自定义同步上下文继承了默认同步上下文, 并重写了`Send`与`Post`方法。  
+当`Send`或`Post`回调时, 把回调存入一个列表里, 并在主线程的While循环里取出回调并执行。
+
+运行上述代码, 可以看到控制台打印依次如下:
+1. Main ThreadId=1
+2. async1 ThreadId=1
+3. Post callback
+4. async2 ThreadId=1
+5. Post callback
+6. async3 ThreadId=1
+
+这样就实现了异步代码`Await`执行完成后回到了主线程里执行后续的代码。
