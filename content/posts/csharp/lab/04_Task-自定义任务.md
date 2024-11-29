@@ -3,7 +3,7 @@ title: Task-自定义任务
 subtitle:
 date: 2024-11-26T12:34:08+08:00
 slug:
-draft: true
+draft: false
 author:
   name: mzbswh
   link:
@@ -17,9 +17,7 @@ weight: 0
 tags:
   - c#
   - 异步
-  - Async
-  - 同步上下文
-  - SynchronizationContext
+  - Task
 categories:
   - c#
 collections:
@@ -264,3 +262,7 @@ public class MyTaskMethodBuilder<T>
 10. 同5
 11. 同8
 12. `FooAsync`执行完成, 对应最后的`return 999;`, 状态机调用`MyTaskMethodBuilder`的`SetResult`方法。
+13. `MyTask`执行`SetResult`方法, 这里会将`IsCompleted`属性标记为完成状态, 同时执行'continue action'回调。
+14. 上一步调用了`MyAwaiter`的`RunCallback`方法。方法里执行第7步传入的回调。
+15. 执行`Main`状态机的`MoveNext`方法, 获取异步结果并赋值给`result`参数。
+16. 执行`Console.WriteLine($"result={result}");`。
