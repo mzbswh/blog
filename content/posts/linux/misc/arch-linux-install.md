@@ -1,9 +1,9 @@
 ---
-title: 开篇
+title: Windows & ArchLinux双系统安装
 subtitle:
-date: 2024-11-06T14:55:33+08:00
-slug: 583bc6c
-draft: false
+date: 2024-12-08T21:35:49+08:00
+slug: 69724bb
+draft: true
 author:
   name: mzbswh
   link:
@@ -12,17 +12,19 @@ author:
 description:
 keywords:
 license:
-comment: true
+comment: false
 weight: 0
 tags:
+  - linux
+  - arch
   - misc
 categories:
+  - linux
   - misc
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary:
 resources:
   - name: featured-image
     src: featured-image.jpg
@@ -39,5 +41,4 @@ repost:
 
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
-
-我的第一篇博客，此网站主要用来记录一些学习笔记，知识分享等...
+TODO
