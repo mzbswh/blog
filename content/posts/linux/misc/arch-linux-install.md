@@ -220,7 +220,7 @@ sudo systemctl enable gdm.service  # 设置GDM开机启动
 reboot               # 重启
 ```
 
-### 1. 输入法
+### 3.1 输入法
 
 推荐安装`fcitx5`输入法框架和`fcitx5-rime`中文输入法。
 ```bash
@@ -248,13 +248,13 @@ vim default.yaml  # 找到 page_size 调整参数
 ```
 
 
-### 2. gnome拓展
+### 3.2 gnome拓展
 使用gnome拓展调整桌面布局和外观
 ```bash
 sudo pacman -S gnome-shell-extensions gnome-tweaks
 ```
 
-### 3. 图标与主题
+### 3.3 图标与主题
 可以在[官方主题网站](https://www.gnome-look.org/browse/)下载主题和图标进行安装。
 
 鼠标与图标放在`~/.icons`目录下, 主题放在`~/.themes`目录下。
