@@ -235,10 +235,22 @@ public class LambdaTest
     }
 }
 ```  
-> [!quote] 结论
-> 与案例1类似，会产生一个唯一的匿名类与委托实例。  
-> 注：此案例将Foo改为实例方法所产生的结果是一样的。 
----
+
+### 补充C#9.0
+> [!example] static lambda
+
+```csharp
+public class LambdaTest
+{
+    public static void Foo()
+    {
+        Func<int, int> square = static x => x * x;
+    }
+}
+```
+
+`static`关键字：表示 Lambda 表达式不会捕获任何外部实例成员。
+
 {.awesome-hr}
 
 ### 总结
