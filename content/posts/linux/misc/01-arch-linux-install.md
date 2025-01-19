@@ -44,8 +44,8 @@ repost:
 
 > [!NOTE] 简介
 > 本文主要内容为Windows环境下安装ArchLinux双系统, 以及桌面安装和简单的美化配置。</br>
-> 建议参考[ArchLinux官方文档](https://wiki.archlinux.org/title/Installation_guide)进行安装。
-> 建议参数[ArchLinux安装](https://archlinuxstudio.github.io/ArchLinuxTutorial)。
+> 建议参考[ArchLinux官方文档](https://wiki.archlinux.org/title/Installation_guide)进行安装。  
+> 建议参考[ArchLinux安装](https://archlinuxstudio.github.io/ArchLinuxTutorial)。
 
 ## 1. 准备工作
 
