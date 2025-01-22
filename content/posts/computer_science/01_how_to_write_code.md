@@ -3,7 +3,7 @@ title: 如何写出好的代码？
 subtitle:
 date: 2025-01-22T20:26:16+08:00
 slug: f56894b
-draft: true
+draft: false
 author:
   name: mzbswh
   link:
