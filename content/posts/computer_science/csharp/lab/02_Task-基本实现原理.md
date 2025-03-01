@@ -280,7 +280,6 @@ internal static class AsyncMethodBuilderCore // debugger depends on this exact n
 
 这两个方法主要区别在与`AwaitUnsafeOnCompleted`不会捕获`ExecutionContext`, 这会减少一些不必要的开销, 大多数的异步场景不依赖`ExecutionContext`。  
 
-对于一些高频的异步调用场景, 捕获`ExecutionContext`会显著影响性能。如果需要捕获`ExecutionContext`, 可参考下面的写法:
 ```c#
 async Task Example()
 {
