@@ -35,3 +35,22 @@ li[data-task='tip'] {
     --fi-task-color: #a4f774;
     --fi-checkbox-color: #EA9E36;
 }
+
+.archive .taxonomy-cards {
+    display: block;
+    columns: 2 18rem;
+    column-gap: clamp(2rem, 6vw, 5rem);
+
+    .card-item {
+        display: inline-block;
+        width: 100%;
+        min-height: 0;
+        padding: 0 0 1.5rem;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        &:nth-child(n+3) {
+            margin-top: 0;
+        }
+    }
+}

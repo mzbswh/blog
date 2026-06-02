@@ -81,9 +81,9 @@ repost:
   .harness-source { margin-top: .8rem !important; font-size: .92rem; }
   .harness-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: .8rem;
-    margin: 1rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    gap: clamp(.65rem, 2vw, 1.1rem);
+    margin: clamp(.85rem, 2vw, 1.2rem) 0;
   }
   .harness-card,
   .harness-panel,
@@ -102,23 +102,61 @@ repost:
   }
   .harness-quote p { margin: 0; }
   .harness-flow {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: .6rem;
+    display: flex;
+    gap: 1.7rem;
     margin: 1rem 0;
+    overflow-x: auto;
+    padding: .15rem .1rem .55rem;
+    scroll-snap-type: x proximity;
   }
   .harness-flow span {
-    display: block;
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 7.5rem;
     border: 1px solid var(--harness-border);
     border-radius: 999px;
     padding: .45rem .7rem;
     text-align: center;
     font-weight: 600;
     background: var(--harness-soft);
+    scroll-snap-align: start;
+  }
+  .harness-flow span:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -1.25rem;
+    color: var(--harness-strong);
+    font-weight: 700;
   }
   .harness-table-wrap { overflow-x: auto; margin: .9rem 0 1.2rem; }
-  .harness-table-wrap table { width: 100%; display: table; margin: 0; }
-  .harness-table-wrap th { white-space: nowrap; }
+  .harness-table-wrap table {
+    width: 100%;
+    display: table;
+    margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: var(--fi-table-background-color, var(--fi-global-background-color, #fff));
+  }
+  .harness-table-wrap th,
+  .harness-table-wrap td {
+    border: 1px solid var(--harness-border);
+    padding: .62rem .75rem;
+    vertical-align: top;
+  }
+  .harness-table-wrap th {
+    white-space: nowrap;
+    font-weight: 700;
+    background: var(--fi-table-thead-color, var(--harness-soft));
+  }
+  .harness-table-wrap tbody tr:nth-child(even) {
+    background: var(--harness-soft);
+  }
+  .harness-table-wrap td {
+    min-width: 9rem;
+  }
   @media (max-width: 680px) {
     .harness-hero { padding: 1rem; }
     .harness-hero h2 { font-size: 1.35rem; }
