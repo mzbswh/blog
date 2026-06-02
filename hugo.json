@@ -8,7 +8,9 @@
    "languageCode": "zh-CN",
    "languageName": "Chinese Simplified",
    "hasCJKLanguage": true,
-   "paginate": 12,
+   "pagination": {
+      "pagerSize": 12
+   },
    "copyright": "",
    "enableRobotsTXT": true,
    "enableGitInfo": true,
@@ -177,10 +179,10 @@
       "priority": 0.5
    },
    "Permalinks": {
-      "posts": "posts/:slugorfilename"
+      "posts": "posts/:slugorcontentbasename"
    },
    "privacy": {
-      "twitter": {
+      "x": {
          "enableDNT": true
       },
       "youtube": {
