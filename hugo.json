@@ -274,7 +274,7 @@
       "fingerprint": "",
       "dateFormat": "2006-01-02",
       "images": [],
-      "enablePWA": true,
+      "enablePWA": false,
       "externalIcon": true,
       "capitalizeTitles": true,
       "withSiteTitle": true,
